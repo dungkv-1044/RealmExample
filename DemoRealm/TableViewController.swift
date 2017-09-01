@@ -14,7 +14,7 @@ class TableViewController: UITableViewController {
     var humans: [Human] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDefaulRealmForUser(username: "demo")
+        setDefaulRealmForUser(username: "Relation2")
         realm = try! Realm()
         queryAllHuman()
     }
@@ -58,6 +58,11 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = humans[indexPath.row].name
+        let course = humans[indexPath.row].courses[1]
+        print(course.name)
+        if let faculty = humans[indexPath.row].faculty {
+            print(faculty.name)
+        }
         return cell
     }
     

@@ -39,6 +39,18 @@ class ViewController: UIViewController {
         human.name = name.text ?? ""
         human.age = Int(age.text!) ?? 0
         human.address = address.text ?? ""
+        let course1 = Course()
+        course1.code = "ADF1"
+        course1.name = "JavaSwing 1"
+        let course2 = Course()
+        course2.code = "ADF2"
+        course2.name = "JavaSwing 2"
+        let faculty = Faculty()
+        faculty.code = "IT"
+        faculty.name = "Information of Technology"
+        human.courses.append(course1)
+        human.courses.append(course2)
+        human.faculty = faculty
         let realm = try! Realm()
         try! realm.write {
             realm.add(human)

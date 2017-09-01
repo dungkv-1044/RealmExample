@@ -14,7 +14,18 @@ class Human: Object {
     dynamic var name = ""
     dynamic var age = 0
     dynamic var address = ""
+    let courses = List<Course>()
+    dynamic var faculty: Faculty?
     override static func primaryKey() -> String? {
         return "id"
     }
+}
+
+class Course: Object {
+    dynamic var code = ""
+    dynamic var name = ""
+}
+class Faculty: Object {
+    dynamic var code = ""
+    dynamic var name = ""
 }
